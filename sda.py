@@ -132,20 +132,13 @@ class Example(QWidget):
             fname,ftype = QtWidgets.QFileDialog.getOpenFileName(self,"Open file","/")
         except:
             pass
-        
-        print(fname)
-        print("stop4")
-        face_cube=magiccube.cubeproess(fname)
-        print(faceid)
-        print(type(self.colorlist[0][0]))
-      
+
+        face_cube=magiccube.cubeproess(fname)   
         for i in range(9):
             self.colorlist[(faceid-1)*9+i]=face_cube[i].colour
-        
-        print("stop6")
         if fname != "":
             self.idnum=faceid
-        print("stop7")  
+       
           
     def drawRectangles(self, qp):           
         col = QColor(255,255,255)
